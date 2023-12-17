@@ -296,8 +296,6 @@ AVLNode* deleteNodeAVL(AVLNode* root, int key) {
 }
 
 
-
-
 // Function to generate random data for computational experiments
 int* generateRandomData(int size) {
   int* data = (int*)malloc(size * sizeof(int));
@@ -305,8 +303,6 @@ int* generateRandomData(int size) {
       data[i] = rand();
   return data;
 }
-
-
 
 
 int* generateOrderedData(int size) // for worst case scenarios
@@ -334,9 +330,6 @@ void freeNonAVLTree(Node* root) {
     free(root);
   }
 }
-
-
-
 
 // Function to measure the performance of operations on trees
 void measurePerformanceRandomInput(int dataSize) {
@@ -479,7 +472,7 @@ int main() {
 
   // Experiment with different problem sizes (average case)
   printf("Random number tests: \n");
-  measurePerformanceRandomInput(100000);   // Change this value to experiment with different data sizes
+  //measurePerformanceRandomInput(100000);   // Change this value to experiment with different data sizes
   //measurePerformanceRandomInput(1000000);
   //measurePerformanceRandomInput(10000000);
   //measurePerformanceRandomInput(100000000);
@@ -489,10 +482,10 @@ int main() {
   // Experiment with different problem sizes (worst case)
   printf("Ordered number tests: \n");
   measurePerformanceSpecialInput(100000);   // Change this value to experiment with different data sizes
-  //measurePerformanceSpecialInput(1000000);
-  //measurePerformanceSpecialInput(10000000);
-  //measurePerformanceSpecialInput(100000000);
-  //measurePerformanceSpecialInput(1000000000);
+  measurePerformanceSpecialInput(1000000);
+  measurePerformanceSpecialInput(10000000);
+  measurePerformanceSpecialInput(100000000);
+  measurePerformanceSpecialInput(1000000000);
 
   return 0;
 }
